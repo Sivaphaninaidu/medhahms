@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: radial-gradient(circle at top, #eff4ff 0%, #f8fbff 40%, #f8fafc 100%);
+            color: #1f2937;
+            padding: 24px;
+        }
+
+        .page-shell {
+            width: min(460px, 100%);
+            background: #ffffff;
+            border-radius: 28px;
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08);
+            border: 1px solid rgba(148, 163, 184, 0.22);
+            padding: 34px 30px;
+        }
+
+        .page-shell::before {
+            content: '';
+            display: block;
+            width: 56px;
+            height: 4px;
+            border-radius: 999px;
+            background: linear-gradient(90deg, #5b72e8, #7c3aed);
+            margin-bottom: 24px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin: 0 0 10px;
+        }
+
+        p.lead {
+            margin: 0 0 20px;
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        form {
+            display: block;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+            background: #fbfdff;
+            color: #111827;
+            font-size: 1rem;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #5b72e8;
+            box-shadow: 0 0 0 4px rgba(91, 114, 232, 0.14);
+            background: #ffffff;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px 16px;
+            border: none;
+            border-radius: 16px;
+            background: #5b72e8;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease;
+            margin-top: 12px;
+        }
+
+        button:hover {
+            background: #4755c4;
+            transform: translateY(-1px);
+        }
+
+        .error {
+            color: #dc2626;
+            margin: 0 0 16px;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 520px) {
+            body {
+                padding: 16px;
+            }
+
+            .page-shell {
+                padding: 26px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-shell">
+        <h1>Signup Page</h1>
+        <p class="lead">Choose your Life</p>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" placeholder="username" name="username"><br><br>
+            <input type="password" placeholder="password" name="password"><br><br>
+            <button type="submit">Signup</button>
+        </form>
+        <p>
+           Already have an account?
+           <a href="{% url 'login' %}">Login</a>
+         </p>
+    </div>
+</body>
+</html>

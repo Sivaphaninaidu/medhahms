@@ -1,7 +1,10 @@
 from . import views
 from django.urls import path
-from .views import doctors_list
+from . import views
 
 urlpatterns = [
-    path('', views.doctors_list, name='doctors_list')
+    path('', views.doctor_list, name='doctor_list'),
+    path('create/', views.doctor_create, name='doctor_create'),
+    path('<int:pk>/edit/', views.doctor_edit, name='doctor_edit'),
+    path('<int:pk>/delete/', views.doctor_delete, name='doctor_delete'),
 ]

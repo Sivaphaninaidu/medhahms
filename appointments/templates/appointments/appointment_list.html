@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container my-4">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2>Appointments</h2>
+        <a href="/appointments/create/" class="btn btn-primary">+ New Appointment</a>
+    </div>
+
+    {% if appointments %}
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Patient</th>
+                    <th>Doctor</th>
+                    <th>Appointment Time</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for appointment in appointments %}
+                <tr>
+                    <td>{{ forloop.counter }}</td>
+                    <td>{{ appointment.patient }}</td>
+                    <td>{{ appointment.doctors }}</td>
+                    <td>{{ appointment.appointment_time|date:"d M Y, h:i A" }}</td>
+                    <td>{{ appointment.appointment_status }}</td>
+                    <td>
+                        <a href="/appointments/{{ appointment.id }}/edit/" class="btn btn-sm btn-primary me-2">Edit</a>
+                        <a href="/appointments/{{ appointment.id }}/delete/" class="btn btn-sm btn-danger">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    {% else %}
+    <div class="alert alert-info text-center">
+        No appointments scheduled yet.
+    </div>
+    {% endif %}
+</div>
+</body>
+</html>

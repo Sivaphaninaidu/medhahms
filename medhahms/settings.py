@@ -1,3 +1,4 @@
+
 """
 Django settings for medhahms project.
 
@@ -126,3 +127,22 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_URL = '/login/'
 LOGIN_REDIRECT_URL = '/dashboard/'
+
+
+
+
+# Resend API Key for email
+RESEND_API_KEY = 're_Kj3mVTGR_NH1nzCWrL9Nb1mujrnHTFCQn'
+
+# Resend configuration
+
+# Email configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = 'sivaphaninaidu999@gmail.com'  # The email you just verified
+
+GEMINI_API_KEY = 'AIzaSyAB4319LMsTrk1IgkkmDUTrv2latHw2ifo'
+
+
+
+
+# re_J1RbC1WG_6DoRuKDcrTSnrxaRfbJ7jSBj

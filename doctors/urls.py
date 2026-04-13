@@ -7,4 +7,5 @@ urlpatterns = [
     path('create/', views.doctor_create, name='doctor_create'),
     path('<int:pk>/edit/', views.doctor_edit, name='doctor_edit'),
     path('<int:pk>/delete/', views.doctor_delete, name='doctor_delete'),
+    path('api/', views.DoctorListCreateApiView.as_view(), name='doctor_api')
 ]

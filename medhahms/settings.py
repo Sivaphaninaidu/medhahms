@@ -12,9 +12,14 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-x)ei&5-rlxx^u8)2(p_dt!3n9&w2a@mrtfxht=mx=n0n7#o8(u'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'medhahms.onrender.com',
+    'localhost',
+    '127.0.0.1',
+    '.onrender.com',  # This allows all render.com subdomains
+]
 
 
 # Application definition

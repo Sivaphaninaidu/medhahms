@@ -50,6 +50,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CSRF_TRUSTED_ORIGINS = ['https://medhahms.onrender.com']
+
 ROOT_URLCONF = 'medhahms.urls'
 
 TEMPLATES = [

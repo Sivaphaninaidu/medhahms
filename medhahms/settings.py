@@ -75,19 +75,19 @@ WSGI_APPLICATION = 'medhahms.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
+DATABASES ={
+     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME', default='medhahms'),
-        'USER': config('DB_USER', default='postgres'),
-        'PASSWORD': config('DB_PASSWORD', default=''),
-        'HOST': config('DB_HOST', default='localhost'),
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
         'PORT': config('DB_PORT', default='5432'),
         'OPTIONS': {
             'sslmode': 'require',
         },
     }
-}
+  }
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
@@ -134,7 +134,7 @@ LOGIN_REDIRECT_URL = '/dashboard/'
 
 
 # Resend API Key for email
-RESEND_API_KEY = config("RESEND_API_KEY", default='')
+RESEND_API_KEY = config("RESEND_API_KEY")
 
 # Resend configuration
 
@@ -142,7 +142,7 @@ RESEND_API_KEY = config("RESEND_API_KEY", default='')
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = 'sivaphaninaidu999@gmail.com'  # The email you just verified
 
-GEMINI_API_KEY = config("GEMINI_API_KEY", default='')
+GEMINI_API_KEY = config("GEMINI_API_KEY")
 
 
 

@@ -134,7 +134,7 @@ LOGIN_REDIRECT_URL = '/dashboard/'
 
 
 # Resend API Key for email
-RESEND_API_KEY = config("RESEND_API_KEY")
+RESEND_API_KEY = config("RESEND_API_KEY", default='')
 
 # Resend configuration
 

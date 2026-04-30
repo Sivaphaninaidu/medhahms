@@ -142,7 +142,7 @@ RESEND_API_KEY = config("RESEND_API_KEY", default='')
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 DEFAULT_FROM_EMAIL = 'sivaphaninaidu999@gmail.com'  # The email you just verified
 
-GEMINI_API_KEY = config("GEMINI_API_KEY")
+GEMINI_API_KEY = config("GEMINI_API_KEY", default='')
 
 
 
